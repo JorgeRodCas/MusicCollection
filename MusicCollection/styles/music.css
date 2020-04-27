@@ -1,0 +1,97 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    font-size: 14px;
+    font-weight: 300;
+    width: 800px;
+    margin: auto;
+    padding: 24px;
+}
+
+select, input {
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+select {
+    padding: 2px;
+    border-radius: 3px;
+}
+
+div.container {
+    padding: 24px;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+    div.container.albums {
+    }
+
+    div.container.photos {
+        height: 320px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    div.container.comments {
+    }
+
+input[type=submit] {
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fefefe;
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+.btnVisualizeAlbum {
+    background-color: #1A237E !important;
+}
+
+.btnSeeComments {
+
+}
+
+.photoItem {
+
+}
+
+.photoItem div.photo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.photoItem div.photoOptions {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 24px;
+    padding-top: 12px;
+}
+
+    .photoItem div.photoOptions span {
+        display: block;
+    }
+
+span.cBody {
+    font-style: italic;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+span.cName {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+span.cEmail a {
+    text-transform: lowercase;
+    color: #FF5722;
+}

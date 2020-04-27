@@ -1,4 +1,4 @@
-﻿var commentTemplate = '<tr><td><div class="comment"><span class="cBody">{body}</span><span class="cName">{name}</span><span class="cEmail">{email}</span></div></td></tr>';
+﻿var commentTemplate = '<tr><td><div class="comment"><span class="cBody">"{body}"</span><span class="cName">{name}</span><span class="cEmail"><a href="mailto:{emailto}">{email}</a></span></div></td></tr>';
 
 $(document).ready(function () {
 
@@ -13,11 +13,19 @@ $(document).ready(function () {
     });
 
     function fillComments(comments) {
+
+        if (comments.length === 0) {
+            alert('No hay comentarios para este álbum');
+        }
+
         $('#tbComments tr').remove();
         var $tbComments = $('#tbComments');
 
         comments.forEach(function (c) {
-            let $htmlCommentRow = $(commentTemplate.replace('{body}', c.body).replace('{name}', c.name).replace('{email}', c.email));
+            let $htmlCommentRow = $(commentTemplate.replace('{body}', c.body)
+                .replace('{name}', c.name)
+                .replace('{emailto}', c.email)
+                .replace('{email}', c.email));
             $tbComments.append($htmlCommentRow);
         });
     }

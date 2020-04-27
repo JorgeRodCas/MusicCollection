@@ -9,31 +9,33 @@
     <script>
         var commentEndpoint = '<%= ConfigurationManager.AppSettings["commentEndpoint"] %>'
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet" />
+    <link href="styles/music.css" rel="stylesheet" />
 </head>
 <body>
     <form id="frmAlbum" runat="server">
         <div class="mainContainer">
-            <div class="albumsContainer">
+            <div class="container albums">
                 <asp:DropDownList runat="server" ID="ddlAlbums"></asp:DropDownList>
-                <asp:Button runat="server" ID="btnVisualizeAlbum" Text="Visualizar álbum" OnClick="btnVisualizeAlbum_Click" />
+                <asp:Button runat="server" ID="btnVisualizeAlbum" CssClass="btnVisualizeAlbum" Text="Visualizar álbum" OnClick="btnVisualizeAlbum_Click" />
             </div>
-            <div class="photosContainer">
+            <div class="container photos">
                 <asp:Repeater runat="server" ID="repPhotos">
                     <ItemTemplate>
-                        <div>
+                        <div class="photoItem">
                             <div class="photo">
                                 <img src='<%#Eval("thumbnailUrl") %>' />
                             </div>
                             <div class="_photoInfo photoOptions">
                                 <span><%# Eval("title") %></span><br />
-                                <asp:Button runat="server" id="btnSeeComments" Text="Ver comentarios" />
+                                <asp:Button runat="server" id="btnSeeComments" CssClass="btnSeeComments" Text="Ver comentarios" />
                                 <asp:HiddenField runat="server" ID="hfPhotoId" value='<%#Eval("id") %>' />
                             </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <div class="commentsContainer">
+            <div class="container comments">
                 <asp:Table runat="server" ID="tbComments"></asp:Table>
             </div>
         </div>
